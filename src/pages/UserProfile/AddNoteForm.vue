@@ -64,17 +64,15 @@
             </md-field>
           </div> -->
           <div class="md-layout-item md-size-100">
+            <label>Details</label>
+          </div>
+          <div class="md-layout-item md-size-100">
             <md-field maxlength="5">
-              <label>Details</label>
-              <md-textarea v-model="details"></md-textarea>
+              <vue-editor v-model="details"></vue-editor>
             </md-field>
           </div>
           <div class="md-layout-item md-size-100 text-right">
             <md-button class="md-raised md-warning" type="submit">Submit</md-button>
-          </div>
-
-          <div>
-            <Vueditor></Vueditor>
           </div>
         </div>
       </md-card-content>
@@ -83,31 +81,9 @@
 </template>
 <script>
 import Vue from 'vue'
-import Vuex from 'vuex'
-import Vueditor from 'vueditor'
-
-import 'vueditor/dist/style/vueditor.min.css'
+import { VueEditor } from "vue2-editor";
+// Java have total 8 types of primitive literal: short, long, int, byte, float, double, boolean and char
 import PersonDataService from '../../service/PersonDataService';
-
-let config = {
-  toolbar: [
-    'removeFormat', 'undo', '|', 'elements', 'fontName', 'fontSize', 'foreColor', 'backColor'
-  ],
-  fontName: [
-    {val: 'arial black'}, 
-    {val: 'times new roman'}, 
-    {val: 'Courier New'}
-  ],
-  fontSize: ['12px', '14px', '16px', '18px', '0.8rem', '1.0rem', '1.2rem', '1.5rem', '2.0rem'],
-  uploadUrl: ''
-};
-
-Vue.use(Vuex);
-Vue.use(Vueditor, config);
-// 创建根实例
-new Vue({
-  el: '#editorContainer'
-});
 
 export default {
   name: "add-note-form",
@@ -117,6 +93,11 @@ export default {
       default: ""
     }
   },
+
+  components:{
+    VueEditor
+  },
+
   data() {
     return {
       major: null,
@@ -128,8 +109,7 @@ export default {
     //   city: null,
     //   country: null,
     //   code: null,
-      details:
-        "Details here please...."
+      details: null,
     };
   },
 
