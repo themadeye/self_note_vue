@@ -4,7 +4,7 @@ const INSTRUCTOR = "v1";
 const COURSE_API_URL = "http://localhost:8080";
 const INSTRUCTOR_API_URL = `${COURSE_API_URL}/madeye/${INSTRUCTOR}`;
 
-class PersonDataService{
+class NoteDataService{
     initNote(){
         let data = axios.get(`${INSTRUCTOR_API_URL}/note`);
       console.log('response', data);
@@ -19,4 +19,5 @@ class PersonDataService{
       // return data;
     }
 }
-export default new PersonDataService();
+export default new NoteDataService();
+// PersonDataService

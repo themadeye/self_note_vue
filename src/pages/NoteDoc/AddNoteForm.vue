@@ -83,7 +83,7 @@
 import Vue from 'vue'
 import { VueEditor } from "vue2-editor";
 // Java have total 8 types of primitive literal: short, long, int, byte, float, double, boolean and char
-import PersonDataService from '../../service/PersonDataService';
+import NoteDataService from '../../service/NoteDataService';
 
 export default {
   name: "add-note-form",
@@ -123,7 +123,7 @@ export default {
               title: this.title,
               details: this.details
           });
-          PersonDataService.AddNote(this.major,{
+          NoteDataService.AddNote(this.major,{
               major: this.major,
               subcategory: this.subcategory,
               title: this.title,

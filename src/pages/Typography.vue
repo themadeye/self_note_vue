@@ -9,19 +9,6 @@
           </md-card-header>
           <md-card-content>
             <div id="typography">
-              
-              <md-list-item md-expand>
-                <md-card data-background-color="orange">
-                  <p>something</p>
-                </md-card>
-
-                <md-list slot="md-expand">
-                  <md-list-item class="md-inset">World</md-list-item>
-                  <md-list-item class="md-inset">Europe</md-list-item>
-                  <md-list-item class="md-inset">South America</md-list-item>
-                </md-list>
-              </md-list-item>
-
               <div class="title">
                 <h2>Typography</h2>
               </div>
